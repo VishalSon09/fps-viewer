@@ -9,6 +9,7 @@ RUN cabal update && cabal build --only-dependencies
 
 COPY app ./app
 COPY src ./src
+COPY lib ./lib
 RUN cabal build && cp "$(cabal list-bin fps-viewer)" /app/fps-viewer-bin
 
 # ---------- runtime stage ----------

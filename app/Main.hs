@@ -31,7 +31,9 @@ mkYesod "App" [parseRoutes|
 /minimap/#Text   MinimapR GET
 |]
 
-instance Yesod App
+instance Yesod App where
+  -- No sessions or logins: stops Yesod from creating client_session_key.aes
+  makeSessionBackend _ = return Nothing
 
 -- | Maps (with coordinate config) + every match file, for the filter dropdowns.
 getIndexR :: Handler Value
