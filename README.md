@@ -1,28 +1,30 @@
-# fps-viewer
+# FPS VIEWER 
 
 NATIVE BUILD:
+
     cabal build
     cabal run fps-viewer -- /path/to/player_data     # default: ./player_data
 
+		http://localhost:3000
+
 SURF:
+
     https://fps-viewer-787416256634.europe-west1.run.app/
 
-Expected folder layout:
-    player_data/
-      February_10/<user-id>_<match-id>.nakama-0
-      February_11/...
-      minimaps/AmbroseValley_Minimap.png, GrandRift_Minimap.png, Lockdown_Minimap.jpg
 
-Filters cascade:
+FILTERS CASCADE:
+
     Map -> Date -> Player -> Match -> Events.
 
-Routes: 
+ROUTES: 
+
 		/  (UI)  
 		/api/index  
 		/api/game/<match-id>  
 		/minimap/<MapId>
 
-Code contains:
+CODE CONTAINS:
+
 		Parquet parser  
 		index + server + cascading UI  
 		replay slider  
