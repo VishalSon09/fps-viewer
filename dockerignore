@@ -1,0 +1,5 @@
+dist-newstyle
+.git
+data
+*.zip
+README.md
